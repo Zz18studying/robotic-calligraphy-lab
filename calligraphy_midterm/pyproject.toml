@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "calligraphy-midterm"
+version = "0.1.0"
+description = "面向机器人书法的笔画时序解析与可控运笔参数生成原型"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "Pillow>=10.0",
+]
+
+[project.scripts]
+calligraphy-sim = "calligrapher.sim_cli:main"
+calligraphy-sim-suite = "calligrapher.sim_suite:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
